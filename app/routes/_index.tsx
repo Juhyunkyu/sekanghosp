@@ -37,8 +37,8 @@ export default function Index() {
       </main>
 
       {/* 푸터 */}
-      <footer className="bg-gray-800 text-white p-4 space-y-4" id="contact">
-        <div className="container mx-auto text-center">
+      <footer className="bg-gray-800 text-white p-7" id="contact">
+        <div className="container mx-auto text-center space-y-7">
           <p>
             <a href="https://www.skhospital.co.kr/" target="_blank" rel="noopener noreferrer" className="hover:underline">
               세강 병원 웹사이트 방문하기
