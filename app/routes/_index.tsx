@@ -19,9 +19,9 @@ export default function Index() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
       {/* 헤더 */}
-      <header className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white p-3 shadow-md">
+      <header className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white p-4 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-wide">세강병원</h1>
+          <h1 className="text-2xl font-bold tracking-wide ml-4">세강병원</h1>
         </div>
       </header>
 
