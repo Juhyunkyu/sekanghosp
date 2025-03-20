@@ -1,54 +1,58 @@
+import React from "react";
+import { Link } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "세강 병원" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
 
 export default function Index() {
+  const images = [
+    "/images/sekang-0.jpg",
+    "/images/sekang-1.jpg",
+    "/images/sekang-2.jpg",
+    "/images/sekang-3.jpg",
+    "/images/sekang-4.jpg",
+  ];
+
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16">
-        <header className="flex flex-col items-center gap-9">
-          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
-            Welcome to <span className="sr-only">Remix</span>
-          </h1>
-          <div className="h-[144px] w-[434px]">
-            <img
-              src="/logo-light.png"
-              alt="Remix"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src="/logo-dark.png"
-              alt="Remix"
-              className="hidden w-full dark:block"
-            />
-          </div>
-        </header>
-        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
-          <p className="leading-6 text-gray-700 dark:text-gray-200">
-            What&apos;s next?
+    <div className="min-h-screen flex flex-col font-sans">
+      {/* 헤더 */}
+      <header className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white p-3 shadow-md">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold tracking-wide">세강병원</h1>
+        </div>
+      </header>
+
+      {/* 이미지 갤러리 */}
+      <main className="flex-grow container mx-auto p-4" id="gallery">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {images.map((src, index) => (
+            <div key={index} className="overflow-hidden rounded-lg shadow-lg">
+              <img src={src} alt={`Gallery image ${index + 1}`} className="w-full h-auto" />
+            </div>
+          ))}
+        </div>
+      </main>
+
+      {/* 푸터 */}
+      <footer className="bg-gray-800 text-white p-4" id="contact">
+        <div className="container mx-auto text-center">
+          <p>
+            <a href="https://www.skhospital.co.kr/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              세강 병원 웹사이트 방문하기
+            </a>
           </p>
-          <ul>
-            {resources.map(({ href, text, icon }) => (
-              <li key={href}>
-                <a
-                  className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {icon}
-                  {text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+          <p>
+            <a href="tel:010-6522-8300" className="hover:underline">
+              이사/본부장 곽복용 Phone: 010-6522-8300
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
