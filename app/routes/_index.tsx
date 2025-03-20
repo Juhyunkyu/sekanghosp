@@ -11,11 +11,9 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   const images = [
-    "/images/sekang-0.jpg",
-    "/images/sekang-1.jpg",
-    "/images/sekang-2.jpg",
-    "/images/sekang-3.jpg",
-    "/images/sekang-4.jpg",
+    "/images/esd.jpg",
+    "/images/mri.jpg",
+    "/images/sekang-last.jpg",
   ];
 
   return (
@@ -39,7 +37,7 @@ export default function Index() {
       </main>
 
       {/* 푸터 */}
-      <footer className="bg-gray-800 text-white p-4" id="contact">
+      <footer className="bg-gray-800 text-white p-4 space-y-4" id="contact">
         <div className="container mx-auto text-center">
           <p>
             <a href="https://www.skhospital.co.kr/" target="_blank" rel="noopener noreferrer" className="hover:underline">
