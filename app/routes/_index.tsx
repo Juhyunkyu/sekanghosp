@@ -70,15 +70,15 @@ export default function Index() {
       >
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-blue-100">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-white">
               의료법인 일민의료재단 세강병원
             </h2>
             <div className="h-1 w-24 mx-auto bg-gradient-to-r from-blue-400 to-blue-300 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center sm:text-left">
+          <div className="grid grid-cols-1 gap-6 text-center">
             <div className="space-y-4">
-              <div className="flex items-center justify-center sm:justify-start space-x-3 group">
+              <div className="flex items-center justify-center space-x-3 group">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 text-blue-300 group-hover:text-blue-200 transition-colors duration-200"
@@ -103,7 +103,7 @@ export default function Index() {
                   href="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EB%8B%AC%EC%84%9C%EA%B5%AC%20%EA%B5%AC%EB%A7%88%EB%A1%9C%20220"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-200 transition-colors duration-200"
+                  className="text-white hover:text-blue-200 transition-colors duration-200"
                 >
                   대구 달서구 구마로 220
                 </a>
@@ -111,32 +111,33 @@ export default function Index() {
             </div>
 
             <div className="space-y-4">
-              <div className="text-lg font-semibold text-blue-200 mb-2">
-                연락처
+              <div className="border border-gray-600/30 rounded-lg p-4 backdrop-blur-sm bg-gray-800/20">
+                <div className="text-white text-center mb-2">
+                  대외협력 이사/본부장 곽봉용
+                </div>
+                <div className="flex items-center justify-center space-x-3 group">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-blue-300 group-hover:text-blue-200 transition-colors duration-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  <a
+                    href="tel:010-6522-8300"
+                    className="text-white hover:text-blue-200 transition-colors duration-200"
+                  >
+                    010-6522-8300
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center justify-center sm:justify-start space-x-3 group">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-blue-300 group-hover:text-blue-200 transition-colors duration-200"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <a
-                  href="tel:010-6522-8300"
-                  className="hover:text-blue-200 transition-colors duration-200"
-                >
-                  010-6522-8300
-                </a>
-              </div>
-              <div className="text-gray-300">대외협력 이사/본부장 곽봉용</div>
             </div>
           </div>
 
