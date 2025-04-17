@@ -7,7 +7,26 @@ import { useState } from "react";
 export const meta: MetaFunction = () => {
   return [
     { title: "세강 병원" },
-    { name: "description", content: "Welcome to Remix!" },
+    { name: "description", content: "의료법인 일민의료재단 세강병원" },
+    // Open Graph 태그 추가
+    { property: "og:type", content: "website" },
+    { property: "og:title", content: "세강 병원" },
+    { property: "og:description", content: "의료법인 일민의료재단 세강병원" },
+    {
+      property: "og:image",
+      content: "https://test.ilmin.co.kr/images/og-image.jpg",
+    },
+    // 카카오톡을 위한 추가 메타 태그
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    // Twitter 카드 (선택사항)
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "세강 병원" },
+    { name: "twitter:description", content: "의료법인 일민의료재단 세강병원" },
+    {
+      name: "twitter:image",
+      content: "https://your-domain.com/images/og-image.jpg",
+    },
   ];
 };
 
