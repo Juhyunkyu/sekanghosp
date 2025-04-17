@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
+import { useSwipeable } from "react-swipeable";
+import { useState } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,43 +12,112 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const images = [
-    "/images/esd.jpg",
-    "/images/mri.jpg",
-    "/images/sekang-last.jpg",
+    "/images/slide1.jpg",
+    "/images/slide2.jpg",
+    "/images/slide3.jpg",
+    "/images/slide4.jpg",
   ];
 
-  return (
-    <div className="min-h-screen flex flex-col font-sans">
-      {/* 헤더 */}
-      <header className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white p-4 shadow-md">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-wide ml-4">세강병원</h1>
-        </div>
-      </header>
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      setCurrentSlide((prev) => (prev + 1) % images.length);
+    },
+    onSwipedRight: () => {
+      setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
+    },
+    trackMouse: true,
+  });
 
-      {/* 이미지 갤러리 */}
-      <main className="flex-grow container mx-auto p-4" id="gallery">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((src, index) => (
-            <div key={index} className="overflow-hidden rounded-lg shadow-lg">
-              <img src={src} alt={`Gallery image ${index + 1}`} className="w-full h-auto" />
+  return (
+    <div className="min-h-screen bg-gray-100 flex flex-col">
+      <div {...handlers} className="relative w-full h-auto overflow-hidden">
+        <div
+          className="flex transition-transform duration-300 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {images.map((image, index) => (
+            <div key={index} className="w-full flex-shrink-0">
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-auto object-contain"
+              />
             </div>
           ))}
         </div>
-      </main>
+
+        {/* 슬라이드 인디케이터 */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full ${
+                index === currentSlide ? "bg-white" : "bg-white/50"
+              }`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
+      </div>
 
       {/* 푸터 */}
-      <footer className="bg-gray-800 text-white p-7" id="contact">
-        <div className="container mx-auto text-center space-y-7">
+      <footer className="bg-gray-800 text-white p-7 mt-auto" id="contact">
+        <div className="container mx-auto text-center space-y-4">
+          <p className="text-xl font-bold">의료법인 일민의료재단 세강병원</p>
           <p>
-            <a href="https://www.skhospital.co.kr/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-              세강 병원 웹사이트 방문하기
+            <a
+              href="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EB%8B%AC%EC%84%9C%EA%B5%AC%20%EA%B5%AC%EB%A7%88%EB%A1%9C%20220"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline flex items-center justify-center gap-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              대구 달서구 구마로 220
             </a>
           </p>
+          <p className="text-lg">대외협력 이사/본부장 곽봉용</p>
           <p>
-            <a href="tel:010-6522-8300" className="hover:underline">
-              이사/본부장 곽복용 Phone: 010-6522-8300
+            <a
+              href="tel:010-6522-8300"
+              className="hover:underline flex items-center justify-center gap-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+              010-6522-8300
             </a>
           </p>
         </div>
