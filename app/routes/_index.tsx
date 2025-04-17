@@ -33,7 +33,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
-      <div {...handlers} className="relative w-full h-auto overflow-hidden">
+      <div {...handlers} className="relative w-full overflow-hidden">
         <div
           className="flex transition-transform duration-300 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -64,62 +64,85 @@ export default function Index() {
       </div>
 
       {/* 푸터 */}
-      <footer className="bg-gray-800 text-white p-7 mt-auto" id="contact">
-        <div className="container mx-auto text-center space-y-4">
-          <p className="text-xl font-bold">의료법인 일민의료재단 세강병원</p>
-          <p>
-            <a
-              href="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EB%8B%AC%EC%84%9C%EA%B5%AC%20%EA%B5%AC%EB%A7%88%EB%A1%9C%20220"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline flex items-center justify-center gap-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-              대구 달서구 구마로 220
-            </a>
-          </p>
-          <p className="text-lg">대외협력 이사/본부장 곽봉용</p>
-          <p>
-            <a
-              href="tel:010-6522-8300"
-              className="hover:underline flex items-center justify-center gap-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-              010-6522-8300
-            </a>
-          </p>
+      <footer
+        className="bg-gradient-to-b from-gray-800 to-gray-900 text-white py-8 px-4 sm:px-6 mt-auto shadow-lg"
+        id="contact"
+      >
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-blue-100">
+              의료법인 일민의료재단 세강병원
+            </h2>
+            <div className="h-1 w-24 mx-auto bg-gradient-to-r from-blue-400 to-blue-300 rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center sm:text-left">
+            <div className="space-y-4">
+              <div className="flex items-center justify-center sm:justify-start space-x-3 group">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-blue-300 group-hover:text-blue-200 transition-colors duration-200"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <a
+                  href="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EB%8B%AC%EC%84%9C%EA%B5%AC%20%EA%B5%AC%EB%A7%88%EB%A1%9C%20220"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-200 transition-colors duration-200"
+                >
+                  대구 달서구 구마로 220
+                </a>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="text-lg font-semibold text-blue-200 mb-2">
+                연락처
+              </div>
+              <div className="flex items-center justify-center sm:justify-start space-x-3 group">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-blue-300 group-hover:text-blue-200 transition-colors duration-200"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <a
+                  href="tel:010-6522-8300"
+                  className="hover:text-blue-200 transition-colors duration-200"
+                >
+                  010-6522-8300
+                </a>
+              </div>
+              <div className="text-gray-300">대외협력 이사/본부장 곽봉용</div>
+            </div>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+            © 2024 세강병원. All rights reserved.
+          </div>
         </div>
       </footer>
     </div>
