@@ -25,7 +25,7 @@ export const meta: MetaFunction = () => {
     { name: "twitter:description", content: "의료법인 일민의료재단 세강병원" },
     {
       name: "twitter:image",
-      content: "https://your-domain.com/images/og-image.jpg",
+      content: "https://test.ilmin.co.kr/images/og-image.jpg",
     },
   ];
 };
